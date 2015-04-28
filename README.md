@@ -1,5 +1,6 @@
-# ESP8266
-nodeMCU projects for ESP8266
+# ESP8266 projects
+written in Lua (nodeMCU)
 
 ###pong-clock
 using an ESP8266-01 module and an SSD1306 OLED display
+see here what it is: http://youtu.be/Su3f5w3nEbg
