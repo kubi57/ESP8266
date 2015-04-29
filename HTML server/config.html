@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+<!DOCTYPE HTML>
+
+<html>
+<head>
+     <title>config</title>
+</head>
+
+<body>
+     <h1>$ssid$ configuration</h1>
+     <form action="config" method="get" target="_self">
+          SSID: <input type="text" name="ssid" value=$ssid$> $ssid_error$<br>
+          Password: <input type="text" name="pwd" value=$pwd$> $pwd_error$<br>
+          <p>
+          <input type="radio" name="mode" value="wifi.SOFTAP" $ap_checked$ > Accesspoint<br>
+          <input type="radio" name="mode" value="wifi.STATION" $sta_checked$ > Station<br>
+          </p>
+          <input type="submit" value="Apply">
+     </form>
+     <br><br><h2><span style="color:red">$message$</h2>
+</body>
+</html>
