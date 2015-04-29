@@ -2,7 +2,7 @@
 
 A tiny little pong clock. Instead of describing it, look here: http://youtu.be/Su3f5w3nEbg
 
-Upon startp it connects to an ntp server and fetches the exact time. 
+Upon start it connects to an ntp server and fetches the exact time. 
 
 ###Required hardware:
 - ESP8266
