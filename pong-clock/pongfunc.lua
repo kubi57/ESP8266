@@ -21,16 +21,16 @@ end
 
 function s_move(sl , delta)  -- sl: 0 or 1, delta: +1 or -1
      if (sl == 0) then
-          lnx = 5        -- X-Position linker Schläger
+          lnx = 5        -- X-position left racket
           hnx = 16       -- 16 = 0x10
      else
-          lnx = 10       -- X-Position rechter Schläger
+          lnx = 10       -- X-position right racket
           hnx = 23       -- 23 = 0x10 + 7
      end
-     if (delta == 1) then     -- runter
+     if (delta == 1) then     -- down
           pg = s_pos[sl] / 8
-          sb = 2 ^(s_pos[sl] % 8)  -- Bitwert oberer Punkt
-          bt = 255 - (2 * sb -1)   -- neuer Bytewert, Punkt entferrnt
+          sb = 2 ^(s_pos[sl] % 8)  -- bit value of upper pixel
+          bt = 255 - (2 * sb -1)   -- new byte value, pixel removed
           command(lnx, hnx, 0xB0+pg)
           if(pg == 0) then bt = bit.bor(bt,1) end
           data(bt)
@@ -40,10 +40,10 @@ function s_move(sl , delta)  -- sl: 0 or 1, delta: +1 or -1
           data(bt)
           s_pos[sl] = s_pos[sl] + 1
      end
-     if (delta == -1) then    -- hoch
-          pg = (s_pos[sl] + 7) / 8           -- page vom untersten Pixel
-          sb = 2 ^((s_pos[sl] - 1) % 8)      -- Bitwert unterer Punkt
-          bt = sb -1                         -- neuer Bytewert, Punkt entferrnt
+     if (delta == -1) then    -- up
+          pg = (s_pos[sl] + 7) / 8           -- page of lowest pixel
+          sb = 2 ^((s_pos[sl] - 1) % 8)      -- bit value of lowest pixel
+          bt = sb -1                         -- new byte value, pixel removed
           command(lnx, hnx, 0xB0+pg)
           if(pg == 7) then 
                data(bit.bor(bt,128))
