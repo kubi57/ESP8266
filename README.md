@@ -1,6 +1,9 @@
 # ESP8266 projects
 written in Lua (nodeMCU)
 
+###DHT22
+read temperature and humidity from a DHT22 sensor and display it as web page
+
 ###HTML server
 some scripts with different complexity, serving html files stored in flash
 
