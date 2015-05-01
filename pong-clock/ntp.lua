@@ -13,7 +13,7 @@ wifi.sta.config("SSID","password")   -- set SSID and password of your access poi
 wifi.sta.connect()
 
 
-timezone = 1
+timezone = 2
 
 tmr.alarm(1,1000,1,function() -- try every second to connect to NTP-server
      if(tins==nil and wifi.sta.status()==5) then
@@ -23,7 +23,7 @@ tmr.alarm(1,1000,1,function() -- try every second to connect to NTP-server
                     + payload:byte(42) * 128 * 256
                     + payload:byte(43) * 128 
                     + payload:byte(44) /2
-                    + timezone * 3600
+                    + timezone * 1800
                tins = (ntpstamp % 43200) * 2 + payload:byte(44) % 2  -- time in seconds
                sck:close()
                sck=nil
