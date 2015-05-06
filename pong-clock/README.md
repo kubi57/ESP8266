@@ -6,7 +6,7 @@ Upon start it connects to an ntp server and fetches the exact time.
 
 ###Required hardware:
 - ESP8266
-- OLED 128 x 64 with SSD1306 controller
+- OLED 128 x 64 with SSD1306 controller, conenct SCL with GPIO0 and SDA with GPIO2
 
 ###Required Firmware:
 last tested nodeMCU version: 0.9.5 build 20150318 integer
