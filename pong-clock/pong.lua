@@ -9,8 +9,8 @@
 tmr_start=tmr.now()/1000000
 
 -- hardware definitions
-sda = 4
-scl = 3
+sda = 4  -- GPIO2
+scl = 3  -- GPIO0
 oled_addr = 0x3C
 
 
