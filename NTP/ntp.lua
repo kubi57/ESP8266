@@ -21,7 +21,7 @@ sk:on("receive", function(sck, payload)
               + payload:byte(42) * 128 * 256
               + payload:byte(43) * 128 
               + payload:byte(44) /2
-              + timezone * 3600
+              + timezone * 1800
      hour = ntpstamp % 43200 / 1800
      minute = ntpstamp % 1800 / 30
      second = ntpstamp % 30 + payload:byte(44)%2
